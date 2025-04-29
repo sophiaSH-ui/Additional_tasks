@@ -10,7 +10,7 @@ namespace task23_lab1
             Console.OutputEncoding = System.Text.Encoding.UTF8;
             Console.InputEncoding = System.Text.Encoding.UTF8;
 
-            double[] sides = Console.ReadLine().Split().Select(double.Parse).ToArray();
+            double[] sides = Console.ReadLine().Split().Select(double.Parse).Where(n => n > 0).ToArray();
 
             if (sides.Length < 3)
             {
