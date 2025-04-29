@@ -1,4 +1,6 @@
-﻿namespace task22_lab1
+﻿using System;
+
+namespace task22_lab1
 
 {
     internal class Program
@@ -23,7 +25,8 @@
                 return;
             }
 
-            Array.Sort(sides);
+            //Array.Sort(sides);
+            Sort(sides);
 
             double maxArea = 0.0;
             double sideA = -1, sideB = -1, sideC = -1;
@@ -42,7 +45,7 @@
                     sideB = b;
                     sideC = c;
                     triangleFound = true;
-                    break; 
+                    break;
                 }
             }
 
@@ -55,6 +58,29 @@
             else
             {
                 Console.WriteLine("жодного трикутника не існує");
+            }
+        }
+
+        static void Sort(double[] arr)
+        {
+            int n = arr.Length;
+            bool swapped;
+
+            for (int i = 0; i < n - 1; i++)
+            {
+                swapped = false;
+
+                for (int j = 0; j < n - 1 - i; j++)
+                {
+                    if (arr[j] > arr[j + 1])
+                    {
+                        (arr[j], arr[j + 1]) = (arr[j + 1], arr[j]);
+                        swapped = true;
+                    }
+                }
+
+                if (!swapped)
+                    break;
             }
         }
     }

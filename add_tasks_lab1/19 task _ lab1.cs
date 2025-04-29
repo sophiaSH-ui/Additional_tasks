@@ -22,7 +22,8 @@ namespace task19_lab1
                 nums[1] = int.Parse(parts[1]);
                 nums[2] = int.Parse(parts[2]);
 
-                Array.Sort(nums);
+                //Array.Sort(nums);
+                Sort(nums);
 
                 Console.WriteLine("\nУсі різні перестановки:");
 
@@ -100,6 +101,30 @@ namespace task19_lab1
                     end--;
                 }
             }
+
+            static void Sort(int[] arr)
+            {
+                int n = arr.Length;
+                bool swapped;
+
+                for (int i = 0; i < n - 1; i++)
+                {
+                    swapped = false;
+
+                    for (int j = 0; j < n - 1 - i; j++)
+                    {
+                        if (arr[j] > arr[j + 1])
+                        {
+                            (arr[j], arr[j + 1]) = (arr[j + 1], arr[j]);
+                            swapped = true;
+                        }
+                    }
+
+                    if (!swapped)
+                        break;
+                }
+            }
+
         }
     }
 }

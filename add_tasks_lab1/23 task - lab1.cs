@@ -21,7 +21,8 @@ namespace task23_lab1
             int n = sides.Length;
             int cnt = 0;
 
-            Array.Sort(sides);
+            //Array.Sort(sides);
+            Sort(sides);
 
             for (int i = n - 1; i >= 2; i--)
             {
@@ -55,6 +56,29 @@ namespace task23_lab1
 
             Console.WriteLine(cnt);
         }
-    
+
+        static void Sort(double[] arr)
+        {
+            int n = arr.Length;
+            bool swapped;
+
+            for (int i = 0; i < n - 1; i++)
+            {
+                swapped = false;
+
+                for (int j = 0; j < n - 1 - i; j++)
+                {
+                    if (arr[j] > arr[j + 1])
+                    {
+                        (arr[j], arr[j + 1]) = (arr[j + 1], arr[j]);
+                        swapped = true;
+                    }
+                }
+
+                if (!swapped)
+                    break;
+            }
+        }
+
     }
 }
