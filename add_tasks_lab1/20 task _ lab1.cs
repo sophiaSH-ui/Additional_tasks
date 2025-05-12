@@ -8,7 +8,6 @@ namespace task20_lab1
         static int[] ReadAndSort()
         {
             int[] sides = Console.ReadLine().Split(' ').Select(int.Parse).ToArray();
-
             //Array.Sort(sides);
             Sort(sides);
 
@@ -46,6 +45,7 @@ namespace task20_lab1
                 Console.WriteLine("жодна з коробок не поміщається в іншу");
             }
         }
+
         static void Sort(int[] arr)
         {
             int n = arr.Length;

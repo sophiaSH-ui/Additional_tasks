@@ -38,13 +38,6 @@ namespace task23_lab1
                     if (a + b > c)
                     {
                         cnt += (right - left);
-                        // Оскільки масив відсортований: sides[left] ≤ sides[right] ≤ sides[i] (тобто a ≤ b ≤ c),
-                        // якщо sides[left] + sides[right] > sides[i] (тобто a + b > c),
-                        // то автоматично всі пари (sides[left], sides[left+1]...sides[right-1]) з sides[right]
-                        // також утворюють невироджені трикутники з sides[i],
-                        // бо їх сума буде ще більшою: (left+1) + right > i, (left+2) + right > i і т.д.
-                        // Тому одразу додаємо всі ці варіанти: count += (right - left)
-
                         right--;
                     }
                     else
